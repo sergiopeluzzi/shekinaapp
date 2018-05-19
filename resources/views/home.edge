@@ -6,6 +6,7 @@
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <title>Shekina APP</title>
+
   {{ css('admin-lte/bower_components/bootstrap/dist/css/bootstrap.min.css') }}
   {{ css('admin-lte/bower_components/font-awesome/css/font-awesome.min.css') }}
   {{ css('admin-lte/bower_components/Ionicons/css/ionicons.min.css') }}
@@ -13,15 +14,15 @@
   {{ css('admin-lte/plugins/iCheck/square/blue.css') }}
   {{ css('main') }}
 </head>
-<body>
-  <main class="hold-transition login-page">
+<body class="hold-transition login-page">
+  <main class="container">
     @!section('content')
   </main>
   
   {{ script('admin-lte/bower_components/jquery/dist/jquery.min.js') }}
   {{ script('admin-lte/bower_components/bootstrap/dist/js/bootstrap.min.js') }}
   {{ script('admin-lte/dist/js/adminlte.min.js') }}
-  {{ script('admin-lte/plugins/iCheck/icheck.min.js') }}
+  {{ script('admin-lte/plugins/iCheck/icheck.min.js') }}  
   {{ script('main') }}
 </body>
 </html>
