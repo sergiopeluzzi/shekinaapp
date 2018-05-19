@@ -15,4 +15,12 @@
 
 const Route = use('Route')
 
-Route.on('/').render('welcome')
+
+// Grupo de rotas com o prefixo admin
+Route.group(() => {
+
+    // Rotas do login
+    Route.get('login', 'UserController.login').as('login')
+
+
+}).prefix('admin')
