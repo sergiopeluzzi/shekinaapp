@@ -1,0 +1,103 @@
+@layout('home')
+
+@section('content')
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-body">
+                    <form class="form">
+                        <a href="{{route('membros.index')}}" class="btn btn-app bg-red pull-right"><i class="fa fa-times-circle"></i>Cancelar</a>
+                        <button type="submit" class="btn btn-app bg-green pull-right"><i class="fa fa-check-circle"></i>Salvar</button>                      
+                        <h2>Dados Pessoais</h2>
+                        <div class"form-group">
+                            <label for="nome" class="col-form-label">Nome</label>
+                            <input class="form-control form-control-lg" type="text" name="nome" required /> 
+                        </div>
+                        <div class"form-group">
+                            <label for="apelido" class="col-form-label">Apelido</label>
+                            <input class="form-control form-control-lg" type="text" name="apelido" /> 
+                        </div>
+                        <div class"form-group">
+                            <label for="dtnascimento" class="col-form-label">Data de Nascimento</label>
+                            <input class="form-control form-control-lg" type="date" name="dtnascimento"> 
+                        </div>
+                        <div class"form-group">
+                            <label for="dtbatismo" class="col-form-label">Data de Batismo</label>
+                            <input class="form-control form-control-lg" type="date" name="dtbatismo"> 
+                        </div>
+                        <div class"form-group">
+                            <label for="dtconversao" class="col-form-label">Data de Conversão</label>
+                            <input class="form-control form-control-lg" type="date" name="dtconversao"> 
+                        </div>
+                        <div class"form-group">
+                            <label for="estadocivil_id" class="col-form-label">Estado Civil</label>
+                            <select class="form-control form-control-lg" name="estadocivil_id">
+                                <option value="1">Casado</option>
+                            </select>
+                        </div>
+                        <div class"form-group">
+                            <label for="cpf" class="col-form-label">CPF</label>
+                            <input class="form-control form-control-lg" type="text" name="cpf" id="cpf"> 
+                        </div>
+                        <div class"form-group">
+                            <label for="rg" class="col-form-label">RG</label>
+                            <input class="form-control form-control-lg" type="text" name="rg"> 
+                        </div>
+                        <h2>Contato</h2>
+                        <div class"form-group">
+                            <label for="fonecel" class="col-form-label">Telefone Celular</label>
+                            <input class="form-control form-control-lg tcelular" type="text" name="fonecel"> 
+                        </div>
+                        <div class"form-group">
+                            <label for="operadoracel_id" class="col-form-label">Operadora</label>
+                            <select class="form-control form-control-lg" name="operadoracel_id"> 
+                                <option value="1">Oi</option>
+                            </select>
+                        </div>
+                        <div class"form-group">
+                            <label for="foneres" class="col-form-label">Telefone Residencial</label>
+                            <input class="form-control form-control-lg tfixo" type="text" name="foneres"> 
+                        </div>
+                        <div class"form-group">
+                            <label for="fonecom" class="col-form-label">Telefone Comercial</label>
+                            <input class="form-control form-control-lg tfixo" type="text" name="fonecom"> 
+                        </div>
+                        <div class"form-group">
+                            <label for="email" class="col-form-label">Email</label>
+                            <input class="form-control form-control-lg" type="email" name="email"> 
+                        </div>
+                        <h2>Endereço</h2>
+                        <div class"form-group">
+                            <label for="endereco" class="col-form-label">Endereço</label>
+                            <input class="form-control form-control-lg" type="text" name="endereco"> 
+                        </div>
+                        <div class"form-group">
+                            <label for="endnum" class="col-form-label">Número</label>
+                            <input class="form-control form-control-lg" type="number" name="endnum"> 
+                        </div>
+                        <div class"form-group">
+                            <label for="bairro" class="col-form-label">Bairro</label>
+                            <input class="form-control form-control-lg" type="text" name="bairro"> 
+                        </div>
+                        <div class"form-group">
+                            <label for="cep" class="col-form-label">CEP</label>
+                            <input class="form-control form-control-lg cep" type="text" name="cep"> 
+                        </div>
+                        <div class"form-group">
+                            <label for="cidade" class="col-form-label">Cidade</label>
+                            <input class="form-control form-control-lg" type="text" name="cidade"> 
+                        </div>
+                        <div class"form-group">
+                            <label for="uf_id" class="col-form-label">Estado</label>
+                            <select class="form-control form-control-lg" name="uf_id">
+                                <option value="1">RO</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection

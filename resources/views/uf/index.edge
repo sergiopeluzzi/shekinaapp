@@ -1,0 +1,55 @@
+@layout('home')
+
+@section('content')
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-header">
+                    <a href="{{route('uf.create')}}" class="btn btn-app bg-green"><i class="fa fa-plus"></i>Adicionar</a>
+                </div>
+                <div class="card-body">
+                    <table class="table table-hover table-datatable display" id="tbuf" width="100%">
+                        <thead>
+                            <tr align="center">
+                                <th>#</th>
+                                <th>Sigla</th>
+                                <th>Descrição</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @each(uf in ufs)
+                            <tr>
+                                <td>{{uf.id}}</td>
+                                <td>{{uf.sigla}}</td>
+                                <td>{{uf.descricao}}</td>
+                                <td>
+                                    <a href="#" data-href="{{route('uf.delete', {id: uf.id})}}" data-toggle="modal" data-target="#confirm-delete" class="btn btn-sm bg-red"><i class="fa fa-trash"></i></a>
+                                </td>
+                            </tr>                              
+                            @endeach
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-sm">
+        <div class="modal-content">
+            <div class="modal-header" align="center">
+                <span style="font-size: 1.8em;"><i class="fa fa-warning"></i> ATENÇÃO <i class="fa fa-warning"></i></span>
+            </div>
+            <div class="modal-body" align="center">
+                <span style="font-size: 1.8em;">Confirma a exclusão do registro?</span>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                <a class="btn btn-danger btn-ok">Excluir</a>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection

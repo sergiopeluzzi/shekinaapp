@@ -1,0 +1,41 @@
+@layout('home')
+
+@section('content')
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-header">
+                    <a href="{{route('membros.create')}}" class="btn btn-app bg-green"><i class="fa fa-plus"></i>Adicionar</a>
+                </div>
+                <div class="card-body">
+                    <table class="table table-hover table-datatable display" id="tbmembros" width="100%">
+                        <thead>
+                            <tr align="center">
+                                <th>#</th>
+                                <th>Nome</th>
+                                <th>Apelido</th>
+                                <th>Data nascimento</th>
+                                <th>Telefone</th>
+                                <th>E-mail</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection

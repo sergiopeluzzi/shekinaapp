@@ -2,10 +2,13 @@
 
 class UserController {
 
-    async login({view}) {
-        return view.render('login.login')
-    }
+    async login({request, auth, response}) {
+        const { username, password } = request.all()
 
+        await auth.remember(true).attempt(username, password)
+
+        return response.redirect('back')
+    }
 
 }
 

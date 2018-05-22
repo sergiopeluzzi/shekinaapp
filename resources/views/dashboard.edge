@@ -1,0 +1,44 @@
+@layout('home')
+
+@section('content')
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-3 col-xs-6">
+            <div class="small-box bg-aqua">
+                <div class="inner">
+                    <h3>1578</h3>
+                    <p>Membros</p>
+                </div>
+                <div class="icon">
+                    <i class="ion ion-person"></i>
+                </div>
+                <a href="{{route('membros.index')}}" class="small-box-footer">Mais... <i class="fa fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+        <div class="col-lg-3 col-xs-6">
+            <div class="small-box bg-orange">
+                <div class="inner">
+                    <h3>181</h3>
+                    <p>Celulas</p>
+                </div>
+                <div class="icon">
+                    <i class="ion ion-home"></i>
+                </div>
+                <a href="{{route('celulas.index')}}" class="small-box-footer">Mais... <i class="fa fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+        <div class="col-lg-3 col-xs-6">
+            <div class="small-box bg-olive">
+                <div class="inner">
+                    <h3>54</h3>
+                    <p>Estudos</p>
+                </div>
+                <div class="icon">
+                    <i class="fa fa-graduation-cap"></i>
+                </div>
+                <a href="{{route('celulas.index')}}" class="small-box-footer">Mais... <i class="fa fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+    </div>
+</div>    
+@endsection

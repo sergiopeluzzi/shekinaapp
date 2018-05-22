@@ -20,7 +20,37 @@ const Route = use('Route')
 Route.group(() => {
 
     // Rotas do login
-    Route.get('login', 'UserController.login').as('login')
+    Route.get('/', ( {view} ) => {
+        return view.render('dashboard', { title: 'Dashboard', subtitle: 'Painel de Controle' })
+    }).as('home')
 
+    // Rotas dos membros
+    Route.get('membros', 'MembroController.index').as('membros.index')
+    Route.get('membros/create', 'MembroController.create').as('membros.create')
+
+    // Rotas das celulas
+    Route.get('celulas', 'CelulaController.index').as('celulas.index')
+
+    // Rotas dos estudos
+    Route.get('estudos', 'EstudoController.index').as('estudos.index')
+
+    // Rotas da UF
+    Route.get('uf', 'UfController.index').as('uf.index')
+    Route.get('uf/create', 'UfController.create').as('uf.create')
+    Route.get('uf/:id', 'UfController.show').as('uf.show')
+    Route.post('uf', 'UfController.store').as('uf.store')
+    Route.get('uf-delete/:id', 'UfController.delete').as('uf.delete')
+
+    // Rotas da Estado Civil
+    Route.get('estadocivil', 'EstadocivilController.index').as('estadocivil.index')
+    Route.get('estadocivil/create', 'EstadocivilController.create').as('estadocivil.create')
+    Route.get('estadocivil/:id', 'EstadocivilController.show').as('estadocivil.show')
+    Route.post('estadocivil', 'EstadocivilController.store').as('estadocivil.store')
+
+    // Rotas da Operadora Cel
+    Route.get('operadoracel', 'OperadoracelController.index').as('operadoracel.index')
+    Route.get('operadoracel/create', 'OperadoracelController.create').as('operadoracel.create')
+    Route.get('operadoracel/:id', 'OperadoracelController.show').as('operadoracel.show')
+    Route.post('operadoracel', 'OperadoracelController.store').as('operadoracel.store')
 
 }).prefix('admin')
