@@ -9,9 +9,9 @@ class OperadoracelController {
             subtitle: 'Lista'
         }
 
-        let ufs = await Operadoracel.all()
+        let operadorascel = await Operadoracel.all()
         return view.render('operadoracel.index', { 
-            ufs: ufs.toJSON()
+            operadorascel: operadorascel.toJSON()
         })
     }
 
@@ -29,10 +29,10 @@ class OperadoracelController {
 
         await uf.delete()
 
-        let ufs = await Operadoracel.all()
+        let operadorascel = await Operadoracel.all()
         return view.render('operadorascel.index', {
             title: 'Operadoras de Celular',
-            ufs: ufs.toJSON()
+            operadorascel: operadorascel.toJSON()
         })
     }
 
