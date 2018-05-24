@@ -2,7 +2,7 @@
   * CSS to select 2 container seems like bootstrap lg input
   */
  .select2-container--default .select2-selection--single {
-     height: 46px !important;
+     height: 40px !important;
      padding: 10px 8px;
      font-size: 18px;
      line-height: 1.33;
@@ -43,4 +43,9 @@
  
  .checkbox-teal [type="checkbox"]:checked+label:before {
     border-color: transparent #009688 #009688 transparent;
+ }
+
+ .swbtn .notActive{
+    color: #449d44;
+    background-color: #fff;
  }

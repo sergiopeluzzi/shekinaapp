@@ -26,6 +26,10 @@ class MembrosSchema extends Schema {
       table.string('cidade')
       table.string('uf')
       table.integer('ativo').defaultTo(1)
+      table.integer('lider').defaultTo(0)
+      table.integer('supervisor').defaultTo(0)
+      table.integer('coordenador').defaultTo(0)
+      table.integer('pastor').defaultTo(0)
       table.timestamps()
     })
   }

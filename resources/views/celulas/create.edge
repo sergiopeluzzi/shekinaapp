@@ -1,0 +1,32 @@
+@layout('home')
+
+@section('content')
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-body">
+                    <form action="{{route('celulas.store')}}" class="form" method="POST">
+                        {{ csrfField() }}
+                        <a href="{{route('celulas.index')}}" class="btn btn-app bg-red pull-right"><i class="fa fa-times-circle"></i>Cancelar</a>
+                        <button type="submit" class="btn btn-app bg-green pull-right"><i class="fa fa-check-circle"></i>Salvar</button>                      
+                        <h2>Dados da Célula</h2>
+                        <div class"form-group">
+                            <label for="descricao" class="col-form-label">Nome</label>
+                            <input class="form-control form-control-lg" type="text" name="descricao" required /> 
+                        </div>
+                        <div class="form-group">
+                            <label for="membro_id" class="col-form-label">Líder</label>
+                            <select class="select-create form-control form-control-lg" name="membro_id">
+                                @each(membro in membros)
+                                <option value="{{membro.id}}">{{membro.nome}}</option>
+                                @endeach
+                            </select>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection

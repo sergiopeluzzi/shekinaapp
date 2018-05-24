@@ -32,6 +32,11 @@ Route.group(() => {
 
     // Rotas das celulas
     Route.get('celulas', 'CelulaController.index').as('celulas.index')
+    Route.get('celulas/create', 'CelulaController.create').as('celulas.create')
+    Route.get('celulas/:id', 'CelulaController.show').as('celulas.show')
+    Route.post('celulas', 'CelulaController.store').as('celulas.store')
+    Route.get('celulas-delete/:id', 'CelulaController.delete').as('celulas.delete')
+
 
     // Rotas dos estudos
     Route.get('estudos', 'EstudoController.index').as('estudos.index')

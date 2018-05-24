@@ -68,7 +68,7 @@ class MembroController {
         return view.render('membros.index', this.data)
     }
 
-    async show({params, view, response}) {
+    async show({params, view}) {
 
         let membro = await Membro.find(params.id)    
         let ufs = await Uf.all()
@@ -84,15 +84,44 @@ class MembroController {
         return view.render('membros.show', this.data)
     }
 
-    async update({params, request, view, response}) {
+    async update({params, request, view}) {
         
         let formdata = request.except(['_csrf'])
         
         let membro = await Membro.find(params.id)
+        let lider = membro.lider
+        let coord = membro.coordenador
+        let superv = membro.supervisor
+        let pastor = membro.pastor
+
         await membro.fill(formdata)
         membro.id = params.id
-        await membro.save()
+
+        if(formdata.lider != '') {
+            membro.lider = formdata.lider    
+        } else {
+            membro.lider = lider    
+        }
         
+        if(formdata.supervisor != '') {
+            membro.supervisor = formdata.supervisor
+        } else {
+            membro.supervisor = superv
+        }
+        
+        if(formdata.coordenador != '') {
+            membro.coordenador = formdata.coordenador
+        } else {
+            membro.coordenador = coord
+        }
+        
+        if(formdata.pastor != '') {
+            membro.pastor = formdata.pastor
+        } else {
+            membro.pastor = pastor
+        }
+
+        await membro.save()
 
         let membros = await Membro.all()
 

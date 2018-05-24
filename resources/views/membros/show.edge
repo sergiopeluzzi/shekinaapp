@@ -104,7 +104,67 @@
                                 @endeach
                             </select>
                         </div>
-                        
+                        <h2>Funções</h2>
+                        <div class="form-group">
+                            <label for="lider" class="col-form-label">Líder</label>
+                            <div class="input-group">
+                                <div class="btn-group sw-btn">
+                                @if(membro.lider == 1)
+                                    <a class="btn btn-success btn-lg active" data-toggle="lider" data-title="1">Sim</a>
+                                    <a class="btn btn-success btn-lg notActive" data-toggle="lider" data-title="0">Não</a>
+                                @else
+                                    <a class="btn btn-success btn-lg notActive" data-toggle="lider" data-title="1">Sim</a>
+                                    <a class="btn btn-success btn-lg active" data-toggle="lider" data-title="0">Não</a>
+                                @endif
+                                </div>
+                                <input type="hidden" name="lider" id="lider">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="supervisor" class="col-form-label">Supervisor</label>
+                            <div class="input-group">
+                                <div class="btn-group sw-btn">
+                                @if(membro.supervisor == 1)
+                                    <a class="btn btn-success btn-lg active" data-toggle="supervisor" data-title="1">Sim</a>
+                                    <a class="btn btn-success btn-lg notActive" data-toggle="supervisor" data-title="0">Não</a>
+                                @else
+                                    <a class="btn btn-success btn-lg notActive" data-toggle="supervisor" data-title="1">Sim</a>
+                                    <a class="btn btn-success btn-lg active" data-toggle="supervisor" data-title="0">Não</a>
+                                @endif
+                                </div>
+                                <input type="hidden" name="supervisor" id="supervisor">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="coordenador" class="col-form-label">Coordenador</label>
+                            <div class="input-group">
+                                <div class="btn-group sw-btn">
+                                @if(membro.coordenador == 1)
+                                    <a class="btn btn-success btn-lg active" data-toggle="coordenador" data-title="1">Sim</a>
+                                    <a class="btn btn-success btn-lg notActive" data-toggle="coordenador" data-title="0">Não</a>
+                                @else
+                                    <a class="btn btn-success btn-lg notActive" data-toggle="coordenador" data-title="1">Sim</a>
+                                    <a class="btn btn-success btn-lg active" data-toggle="coordenador" data-title="0">Não</a>
+                                @endif
+                                </div>
+                                <input type="hidden" name="coordenador" id="coordenador">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="pastor" class="col-form-label">Pastor</label>
+                            <div class="input-group">
+                                <div class="btn-group sw-btn">
+                                @if(membro.pastor == 1)
+                                    <a class="btn btn-success btn-lg active" data-toggle="pastor" data-title="1">Sim</a>
+                                    <a class="btn btn-success btn-lg notActive" data-toggle="pastor" data-title="0">Não</a>
+                                @else
+                                    <a class="btn btn-success btn-lg notActive" data-toggle="pastor" data-title="1">Sim</a>
+                                    <a class="btn btn-success btn-lg active" data-toggle="pastor" data-title="0">Não</a>
+                                @endif
+                                </div>
+                                <input type="hidden" name="pastor" id="pastor">
+                            </div>
+                        </div>
                     </form>
                 </div>
             </div>

@@ -15,9 +15,6 @@
                                 <th>#</th>
                                 <th>Nome</th>
                                 <th>Apelido</th>
-                                <th>Data nascimento</th>
-                                <th>Telefone</th>
-                                <th>E-mail</th>
                                 <th>Ações</th>
                             </tr>
                         </thead>
@@ -27,10 +24,7 @@
                                 <td>{{membro.id}}</td>
                                 <td>{{membro.nome}}</td>
                                 <td>{{membro.apelido}}</td>
-                                <td>{{membro.dtnascimento}}</td>
-                                <td>{{membro.fonecel}}</td>
-                                <td>{{membro.email}}</td>
-                                <td>
+                                <td class="text-nowrap">
                                     <a href="{{route('membros.show', {id: membro.id})}}" class="btn btn-sm bg-yellow"><i class="fa fa-eye"></i></a>
                                     <a href="#" data-href="{{route('membros.delete', {id: membro.id})}}" data-toggle="modal" data-target="#confirm-delete" class="btn btn-sm bg-red"><i class="fa fa-trash"></i></a>
                                 </td>
