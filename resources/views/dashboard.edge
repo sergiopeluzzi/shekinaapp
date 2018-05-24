@@ -6,7 +6,7 @@
         <div class="col-lg-3 col-xs-6">
             <div class="small-box bg-aqua">
                 <div class="inner">
-                    <h3>1578</h3>
+                    <h3>{{ qntMembros || 0 }}</h3>
                     <p>Membros</p>
                 </div>
                 <div class="icon">
@@ -18,7 +18,7 @@
         <div class="col-lg-3 col-xs-6">
             <div class="small-box bg-orange">
                 <div class="inner">
-                    <h3>181</h3>
+                    <h3>{{ qntCelulas || 0 }}</h3>
                     <p>Celulas</p>
                 </div>
                 <div class="icon">
@@ -30,13 +30,13 @@
         <div class="col-lg-3 col-xs-6">
             <div class="small-box bg-olive">
                 <div class="inner">
-                    <h3>54</h3>
+                    <h3>{{ qntEstudos || 0 }}</h3>
                     <p>Estudos</p>
                 </div>
                 <div class="icon">
                     <i class="fa fa-graduation-cap"></i>
                 </div>
-                <a href="{{route('celulas.index')}}" class="small-box-footer">Mais... <i class="fa fa-arrow-circle-right"></i></a>
+                <a href="{{route('estudos.index')}}" class="small-box-footer">Mais... <i class="fa fa-arrow-circle-right"></i></a>
             </div>
         </div>
     </div>

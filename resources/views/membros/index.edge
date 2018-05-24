@@ -22,15 +22,20 @@
                             </tr>
                         </thead>
                         <tbody>
+                            @each(membro in membros)
                             <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td>{{membro.id}}</td>
+                                <td>{{membro.nome}}</td>
+                                <td>{{membro.apelido}}</td>
+                                <td>{{membro.dtnascimento}}</td>
+                                <td>{{membro.fonecel}}</td>
+                                <td>{{membro.email}}</td>
+                                <td>
+                                    <a href="{{route('membros.show', {id: membro.id})}}" class="btn btn-sm bg-yellow"><i class="fa fa-eye"></i></a>
+                                    <a href="#" data-href="{{route('membros.delete', {id: membro.id})}}" data-toggle="modal" data-target="#confirm-delete" class="btn btn-sm bg-red"><i class="fa fa-trash"></i></a>
+                                </td>
                             </tr>
+                            @endeach
                         </tbody>
                     </table>
                 </div>

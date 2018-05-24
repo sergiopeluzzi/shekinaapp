@@ -1,0 +1,37 @@
+@layout('home')
+
+@section('content')
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-header">
+                    <a href="{{route('estadocivil.create')}}" class="btn btn-app bg-green"><i class="fa fa-plus"></i>Adicionar</a>
+                </div>
+                <div class="card-body">
+                    <table class="table table-hover table-datatable display" id="tbestadocivil" width="100%">
+                        <thead>
+                            <tr align="center">
+                                <th>#</th>
+                                <th>Descrição</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @each(estadocivil in estadoscivis)
+                            <tr>
+                                <td>{{estadocivil.id}}</td>
+                                <td>{{estadocivil.descricao}}</td>
+                                <td>
+                                    <a href="#" data-href="{{route('estadocivil.delete', {id: estadocivil.id})}}" data-toggle="modal" data-target="#confirm-delete" class="btn btn-sm bg-red"><i class="fa fa-trash"></i></a>
+                                </td>
+                            </tr>                              
+                            @endeach
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection

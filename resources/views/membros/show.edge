@@ -6,34 +6,35 @@
         <div class="col-sm-12">
             <div class="card">
                 <div class="card-body">
-                    <form class="form" action="{{route('membros.store')}}" method="POST">
-                        <a href="{{route('membros.index')}}" class="btn btn-app bg-red pull-right"><i class="fa fa-times-circle"></i>Cancelar</a>
+                    <form class="form" action="{{route('membros.update', {id: membro.id})}}" method="POST">
+                        <a href="{{route('membros.index')}}" class="btn btn-app bg-red pull-right"><i class="fa fa-times-circle"></i>voltar</a>
                         <button type="submit" class="btn btn-app bg-green pull-right"><i class="fa fa-check-circle"></i>Salvar</button>                      
                         <h2>Dados Pessoais</h2>
                         {{ csrfField() }}
                         <div class"form-group">
                             <label for="nome" class="col-form-label">Nome</label>
-                            <input class="form-control form-control-lg" type="text" name="nome" required /> 
+                            <input class="form-control form-control-lg" type="text" name="nome" required value="{{membro.nome}}" /> 
                         </div>
                         <div class"form-group">
                             <label for="apelido" class="col-form-label">Apelido</label>
-                            <input class="form-control form-control-lg" type="text" name="apelido" /> 
+                            <input class="form-control form-control-lg" type="text" name="apelido" value="{{membro.apelido}}" /> 
                         </div>
                         <div class"form-group">
                             <label for="dtnascimento" class="col-form-label">Data de Nascimento</label>
-                            <input class="form-control form-control-lg" type="date" name="dtnascimento"> 
+                            <input class="form-control form-control-lg" type="date" name="dtnascimento" value="{{membro.dtnascimento}}"> 
                         </div>
                         <div class"form-group">
                             <label for="dtbatismo" class="col-form-label">Data de Batismo</label>
-                            <input class="form-control form-control-lg" type="date" name="dtbatismo"> 
+                            <input class="form-control form-control-lg" type="date" name="dtbatismo" value="{{membro.dtbatismo}}"> 
                         </div>
                         <div class"form-group">
                             <label for="dtconversao" class="col-form-label">Data de Conversão</label>
-                            <input class="form-control form-control-lg" type="date" name="dtconversao"> 
+                            <input class="form-control form-control-lg" type="date" name="dtconversao" value="{{membro.dtconversao}}"> 
                         </div>
                         <div class"form-group">
                             <label for="estadocivil" class="col-form-label">Estado Civil</label>
                             <select class="form-control form-control-lg" name="estadocivil">
+                                <option value="{{membro.estadocivil}}" class="bg-green">{{membro.estadocivil}}</option>
                                 @each(estadocivil in estadoscivis)
                                 <option value="{{estadocivil.descricao}}">{{estadocivil.descricao}}</option>
                                 @endeach
@@ -41,20 +42,21 @@
                         </div>
                         <div class"form-group">
                             <label for="cpf" class="col-form-label">CPF</label>
-                            <input class="form-control form-control-lg" type="text" name="cpf" id="cpf"> 
+                            <input class="form-control form-control-lg" type="text" name="cpf" id="cpf" value="{{membro.cpf}}"> 
                         </div>
                         <div class"form-group">
                             <label for="rg" class="col-form-label">RG</label>
-                            <input class="form-control form-control-lg" type="text" name="rg"> 
+                            <input class="form-control form-control-lg" type="text" name="rg" value="{{membro.rg}}"> 
                         </div>
                         <h2>Contato</h2>
                         <div class"form-group">
                             <label for="fonecel" class="col-form-label">Telefone Celular</label>
-                            <input class="form-control form-control-lg tcelular" type="text" name="fonecel"> 
+                            <input class="form-control form-control-lg tcelular" type="text" name="fonecel" value="{{membro.fonecel}}"> 
                         </div>
                         <div class"form-group">
                             <label for="operadoracel" class="col-form-label">Operadora</label>
                             <select class="form-control form-control-lg" name="operadoracel"> 
+                                <option value="{{membro.operadoracel}}" class="bg-green">{{membro.operadoracel}}</option>
                                 @each(operadoracel in operadorascel)
                                 <option value="{{operadoracel.descricao}}">{{operadoracel.descricao}}</option>
                                 @endeach
@@ -62,45 +64,47 @@
                         </div>
                         <div class"form-group">
                             <label for="foneres" class="col-form-label">Telefone Residencial</label>
-                            <input class="form-control form-control-lg tfixo" type="text" name="foneres"> 
+                            <input class="form-control form-control-lg tfixo" type="text" name="foneres" value="{{membro.foneres}}"> 
                         </div>
                         <div class"form-group">
                             <label for="fonecom" class="col-form-label">Telefone Comercial</label>
-                            <input class="form-control form-control-lg tfixo" type="text" name="fonecom"> 
+                            <input class="form-control form-control-lg tfixo" type="text" name="fonecom" value="{{membro.fonecom}}"> 
                         </div>
                         <div class"form-group">
                             <label for="email" class="col-form-label">Email</label>
-                            <input class="form-control form-control-lg" type="email" name="email"> 
+                            <input class="form-control form-control-lg" type="email" name="email" value="{{membro.email}}"> 
                         </div>
                         <h2>Endereço</h2>
                         <div class"form-group">
                             <label for="endereco" class="col-form-label">Endereço</label>
-                            <input class="form-control form-control-lg" type="text" name="endereco"> 
+                            <input class="form-control form-control-lg" type="text" name="endereco" value="{{membro.endereco}}"> 
                         </div>
                         <div class"form-group">
                             <label for="endnum" class="col-form-label">Número</label>
-                            <input class="form-control form-control-lg" type="number" name="endnum"> 
+                            <input class="form-control form-control-lg" type="number" name="endnum" value="{{membro.endnum}}"> 
                         </div>
                         <div class"form-group">
                             <label for="bairro" class="col-form-label">Bairro</label>
-                            <input class="form-control form-control-lg" type="text" name="bairro"> 
+                            <input class="form-control form-control-lg" type="text" name="bairro" value="{{membro.bairro}}"> 
                         </div>
                         <div class"form-group">
                             <label for="cep" class="col-form-label">CEP</label>
-                            <input class="form-control form-control-lg cep" type="text" name="cep"> 
+                            <input class="form-control form-control-lg cep" type="text" name="cep" value="{{membro.cep}}"> 
                         </div>
                         <div class"form-group">
                             <label for="cidade" class="col-form-label">Cidade</label>
-                            <input class="form-control form-control-lg" type="text" name="cidade"> 
+                            <input class="form-control form-control-lg" type="text" name="cidade" value="{{membro.cidade}}"> 
                         </div>
                         <div class"form-group">
                             <label for="uf" class="col-form-label">Estado</label>
                             <select class="form-control form-control-lg" name="uf">
+                                <option value="{{membro.uf}}" class="bg-green">{{membro.uf}}</option>
                                 @each(uf in ufs)
                                 <option value="{{uf.sigla}}">{{uf.sigla}} | {{uf.descricao}}</option>
                                 @endeach
                             </select>
                         </div>
+                        
                     </form>
                 </div>
             </div>

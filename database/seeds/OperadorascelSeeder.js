@@ -11,9 +11,16 @@
 */
 
 const Factory = use('Factory')
+const Database = use('Database')
 
 class OperadorascelSeeder {
   async run () {
+    const op = await Database.from('operadorascel').insert([
+      { descricao: 'Oi' },
+      { descricao: 'Claro' },
+      { descricao: 'Vico' },
+      { descricao: 'Tim' }
+    ])
   }
 }
 

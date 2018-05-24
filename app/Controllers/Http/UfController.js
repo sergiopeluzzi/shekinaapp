@@ -3,48 +3,53 @@
 const Uf = use('App/Models/Uf')
 
 class UfController {
-    async index({view, response}) {
-        let data = {
+    constructor() {
+        this.data = {
             title: 'Unidades Federativas',
             subtitle: 'Lista'
         }
+    }
 
+    async index({view, response}) {
+        
         let ufs = await Uf.all()
-        return view.render('uf.index', { 
-            ufs: ufs.toJSON()
-        })
+
+        this.data.ufs = ufs.toJSON()
+
+        return view.render('uf.index', this.data)
     }
 
     async create({view}) {
-        let data = {
-            title: 'Unidades Federativas',
-            subtitle: 'Novo'
-        }
 
-        return view.render('uf.create', data)
+        this.data.subtitle = 'Novo'
+
+        return view.render('uf.create', this.data)
     }
 
     async delete({params, view}) {
+        
         let uf = await Uf.find(params.id)
 
         await uf.delete()
 
         let ufs = await Uf.all()
-        return view.render('uf.index', {
-            title: 'Unidades Federativas', 
-            ufs: ufs.toJSON()
-        })
+
+        this.data.ufs = ufs.toJSON()
+
+        return view.render('uf.index', this.data)
     }
 
     async store({request, view, response}) {
+
         let formdata = request.only(['sigla', 'descricao'])
+
         let uf = await Uf.create(formdata)
 
         let ufs = await Uf.all()
-        return view.render('uf.index', {
-            title: 'Unidades Federativas',
-            ufs: ufs.toJSON()
-        })
+
+        this.data.ufs = ufs.toJSON()
+
+        return view.render('uf.index', this.data)
     }
 }
 

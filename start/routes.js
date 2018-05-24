@@ -20,13 +20,15 @@ const Route = use('Route')
 Route.group(() => {
 
     // Rotas do login
-    Route.get('/', ( {view} ) => {
-        return view.render('dashboard', { title: 'Dashboard', subtitle: 'Painel de Controle' })
-    }).as('home')
+    Route.get('/', 'DashboardController.index').as('home')
 
     // Rotas dos membros
     Route.get('membros', 'MembroController.index').as('membros.index')
     Route.get('membros/create', 'MembroController.create').as('membros.create')
+    Route.get('membros/:id', 'MembroController.show').as('membros.show')
+    Route.post('membros', 'MembroController.store').as('membros.store')
+    Route.post('membros/:id', 'MembroController.update').as('membros.update')
+    Route.get('membros-delete/:id', 'MembroController.delete').as('membros.delete')
 
     // Rotas das celulas
     Route.get('celulas', 'CelulaController.index').as('celulas.index')
@@ -46,11 +48,13 @@ Route.group(() => {
     Route.get('estadocivil/create', 'EstadocivilController.create').as('estadocivil.create')
     Route.get('estadocivil/:id', 'EstadocivilController.show').as('estadocivil.show')
     Route.post('estadocivil', 'EstadocivilController.store').as('estadocivil.store')
+    Route.get('estadocivil-delete/:id', 'EstadocivilController.delete').as('estadocivil.delete')
 
     // Rotas da Operadora Cel
     Route.get('operadoracel', 'OperadoracelController.index').as('operadoracel.index')
     Route.get('operadoracel/create', 'OperadoracelController.create').as('operadoracel.create')
     Route.get('operadoracel/:id', 'OperadoracelController.show').as('operadoracel.show')
     Route.post('operadoracel', 'OperadoracelController.store').as('operadoracel.store')
+    Route.get('operadoracel-delete/:id', 'OperadoracelController.delete').as('operadoracel.delete')
 
 }).prefix('admin')

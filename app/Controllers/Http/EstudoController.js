@@ -1,8 +1,13 @@
 'use strict'
 
 class EstudoController {
-    async index() {
+    async index({view}) {
+        let data = {
+            title: 'Estudos',
+            subtitle: 'Lista'
+        }
 
+        return view.render('estudos.index', data)
     }
 
     async create() {

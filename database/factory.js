@@ -10,13 +10,13 @@
 | with dummy data.
 |
 */
+/*
+const Factory = use('Factory')
 
-// const Factory = use('Factory')
 
-/**
-  Factory.blueprint('App/Models/User', (faker) => {
-    return {
-      username: faker.username()
-    }
-  })
+Factory.blueprint('App/Models/Uf', (faker) => {
+  return {
+    username: faker.username()
+  }
+})
 */

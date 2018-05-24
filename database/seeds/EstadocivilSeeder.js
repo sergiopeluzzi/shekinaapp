@@ -11,9 +11,16 @@
 */
 
 const Factory = use('Factory')
+const Database = use('Database')
 
 class EstadocivilSeeder {
   async run () {
+    const ec = await Database.from('estadocivil').insert([
+      { descricao: 'Solteiro(a)' },
+      { descricao: 'Casado(a)' },
+      { descricao: 'Divorciado(a)' },
+      { descricao: 'Viúvo(a)' }
+    ])
   }
 }
 
