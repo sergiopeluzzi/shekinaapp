@@ -47,148 +47,32 @@
 
 <div class="wrapper">
 <div class="se-pre-con"></div>
-  <header class="main-header">
-    <!-- Logo -->
-    <a href="{{route('home')}}" class="logo">
-      <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>S</b>HEK</span>
-      <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Shekina</b>APP</span>
-    </a>
-    <!-- Header Navbar: style can be found in header.less -->
-    <nav class="navbar navbar-static-top">
-      <!-- Sidebar toggle button-->
-      <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
-        <span class="sr-only">Toggle navigation</span>
-      </a>
 
-      <div class="navbar-custom-menu">
-        <ul class="nav navbar-nav">
-          <!-- User Account: style can be found in dropdown.less -->
-          <li class="dropdown user user-menu">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="/admin-lte/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-              <span class="hidden-xs">Sergio Peluzzi</span>
-            </a>
-            <ul class="dropdown-menu">
-              <!-- User image -->
-              <li class="user-header">
-                <img src="/admin-lte/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
-              </li>
-              <!-- Menu Footer-->
-              <li class="user-footer">
-                <div class="pull-left">
-                  <a href="#" class="btn btn-default btn-flat">Perfil</a>
-                </div>
-                <div class="pull-right">
-                  <a href="#" class="btn btn-default btn-flat">Sair</a>
-                </div>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  </header>
-  <!-- Left side column. contains the logo and sidebar -->
-  <aside class="main-sidebar">
-    <!-- sidebar: style can be found in sidebar.less -->
-    <section class="sidebar">
-      <!-- Sidebar user panel -->
-      <div class="user-panel">
-        <div class="pull-left image">
-          <img src="/admin-lte/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
-        </div>
-        <div class="pull-left info">
-          <p>Sergio Peluzzi</p>
-          <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
-        </div>
-      </div>
-      <!-- sidebar menu: : style can be found in sidebar.less -->
-      <ul class="sidebar-menu" data-widget="tree">
-        <li class="header">NAVEGAÇÃO</li>
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-list"></i>
-            <span>Cadastros</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-              <span class="label label-primary pull-right">3</span>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="{{route('membros.index')}}"><i class="fa fa-user"></i> Membros</a></li>
-            <li><a href="{{route('celulas.index')}}"><i class="fa fa-home"></i> Células</a></li>
-            <li><a href="{{route('estudos.index')}}"><i class="fa fa-book"></i> Estudos</a></li>
-          </ul>
-        </li>
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-mouse-pointer"></i>
-            <span>Processos</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-              <span class="label label-primary pull-right">1</span>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-pencil"></i> Validar Reunião</a></li>
-          </ul>
-        </li>
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-files-o"></i>
-            <span>Relatórios</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-              <span class="label label-primary pull-right">4</span>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-paperclip"></i> Reuniões</a></li>
-            <li><a href="#"><i class="fa fa-paperclip"></i> Financeiro</a></li>
-            <li><a href="#"><i class="fa fa-paperclip"></i> Celulas</a></li>
-            <li><a href="#"><i class="fa fa-paperclip"></i> Aniversariantes</a></li>
-          </ul>
-        </li>
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-cogs"></i>
-            <span>Administração</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-              <span class="label label-primary pull-right">3</span>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="{{route('uf.index')}}"><i class="fa fa-wrench"></i> Unidades Federativas</a></li>
-            <li><a href="{{route('operadoracel.index')}}"><i class="fa fa-wrench"></i> Operadoras de Celular</a></li>
-            <li><a href="{{route('estadocivil.index')}}"><i class="fa fa-wrench"></i> Estado Civil</a></li>
-          </ul>
-        </li>
-      </ul>
-    </section>
-    <!-- /.sidebar -->
-  </aside>
-
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
+  @loggedIn
+    
+    @include('layouts.header')
   
-  <!-- Content Header (Page header) -->
-  <section class="content-header">
-    <h1>{{title}}} <small>{{subtitle}}</small></h1>
-    <ol class="breadcrumb">
-        <li><a href="{{route('home')}}"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">{{title}}</li>
-    </ol>
-  </section>
-  <section class="content">
-    @!section('content')
-  </section>
+    @include('layouts.sidebar')
 
-  <div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-sm">
-        <div class="modal-content">
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+
+      <!-- Content Header (Page header) -->
+      <section class="content-header">
+        <h1>{{title}}} <small>{{subtitle}}</small></h1>
+        <ol class="breadcrumb">
+            <li><a href="{{route('home')}}"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li class="active">{{title}}</li>
+        </ol>
+      </section>
+      <section class="content">
+        @!section('content')
+      </section>
+
+      <!-- MODAL -->
+      <div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+          <div class="modal-content">
             <div class="modal-header" align="center">
                 <span style="font-size: 1.8em;"><i class="fa fa-warning"></i> ATENÇÃO <i class="fa fa-warning"></i></span>
             </div>
@@ -199,18 +83,24 @@
                 <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
                 <a class="btn btn-danger btn-ok">Excluir</a>
             </div>
+          </div>
         </div>
+      </div>
+      <!-- /MODAL -->
     </div>
-  </div>
+    <!-- /.content-wrapper -->
 
-  </div>
-  <!-- /.content-wrapper -->
-  <footer class="main-footer">
-    <div class="pull-right hidden-xs">
-      <b>Version</b> 2.4.0
-    </div>
-    <strong>Copyright &copy; 2018 <a href="https://adminlte.io">Comunidade Evangélica Sheina</a>.</strong> Todos os direitos reservados.
-  </footer>
+    <footer class="main-footer">
+      <div class="pull-right hidden-xs">
+        <b>Version</b> 1.0.0
+      </div>
+      <strong>Copyright &copy; 2018 <a href="#">Comunidade Evangélica Sheina</a>.</strong> Todos os direitos reservados.
+    </footer>
+  
+  @else
+    @include('login')  
+  @endloggedIn
+  
 </div>
 <!-- ./wrapper -->      
 

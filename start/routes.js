@@ -21,6 +21,14 @@ Route.group(() => {
 
     // Rotas do login
     Route.get('/', 'DashboardController.index').as('home')
+    Route.post('login', 'UserController.login').as('login')
+    Route.get('logout', 'UserController.logout').as('logout')
+
+    // Rotas dos usuários
+    Route.get('usuarios', 'UserController.index').as('users.index')
+    Route.get('usuarios/create', 'UserController.create').as('users.create')
+    Route.post('usuarios', 'UserController.store').as('users.store')
+    Route.get('usuarios-delete/:id', 'UserController.delete').as('users.delete')
 
     // Rotas dos membros
     Route.get('membros', 'MembroController.index').as('membros.index')

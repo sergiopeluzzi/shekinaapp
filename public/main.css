@@ -41,11 +41,11 @@
  
  a { margin-left: 5px; }
  
- .checkbox-teal [type="checkbox"]:checked+label:before {
-    border-color: transparent #009688 #009688 transparent;
+ .sw-btn .notActive{
+    color: #00a65a;
+    background-color: #fff;
  }
 
- .swbtn .notActive{
-    color: #449d44;
-    background-color: #fff;
+ .icheck {
+
  }
